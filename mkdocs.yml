@@ -1,0 +1,78 @@
+site_name: Taikun Resources
+#site_url: http://185.22.98.126
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - abbr
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition
+  - pymdownx.details
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+
+theme:
+    name: material
+    favicon: https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/general/Itera_logo.png
+    logo: https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png
+    features:
+      - navigation.instant
+      - navigation.tabs
+      - toc.integrate
+      - toc.follow
+      - navigation.expand
+      - navigation.sections
+      - search.highlight
+      - search.share
+      - search.suggest
+      - navigation.top
+      - navigation.tracking
+      - navigation.indexes
+      - content.code.annotate
+    palette:
+      primary: pink
+
+      #repo_url: https://github.com/mikenovak/taikun-blog.git
+      #repo_name: Taikun Resources
+
+# Page tree
+nav:
+  - Home: index.md
+  - Blog:
+    -  blog/index.md
+    - 5 - How to go from Zero to Production with Kubernetes in under 30 mins: blog/05.md
+    - 4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes: blog/04.md
+    - 3 - A comprehensive guide to operating Kubernetes on Taikun: blog/03.md
+    - 2 - Taikun and its orchestration magic: blog/02.md
+    - 1 - The Taikun way to save time and money while using Kubernetes: blog/01.md
+      #  - Tech: tech/tech.md
+  - Use Cases: 
+    - use_cases/index.md
+    - 3 - Taikun-A Swiss knife in Enterprise DevOps: use_cases/03.md
+    - 2 - How Taikun can help a software house streamline its cloud operations: use_cases/02.md
+    - 1 - How Taikun can help Startups scale fast and cheap: use_cases/01.md  
+      #  - User: 
+      #    - User: user/README.md
+      #    - Login: user/login.md
+      #    - Dashboard:
+      #      - user/dashboard/README.md
+      #      - Users: user/dashboard/users.md
+      #      - Charts: user/dashboard/charts.md
+      #      - Tables: user/dashboard/tables.md
+  - Dictionary:
+    - From A to Z: dictionary/from-a-to-z.md
+extra:
+  generator: false
