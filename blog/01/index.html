@@ -1,0 +1,967 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        
+      
+      <link rel="icon" href="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/general/Itera_logo.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11+insiders-4.13.1">
+    
+    
+      
+        <title>1 - The Taikun way to save time and money while using Kubernetes - Taikun Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8b1d949c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="pink" data-md-color-accent="">
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#the-taikun-way-to-save-time-and-money-while-using-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Taikun Resources" class="md-header__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taikun Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 - The Taikun way to save time and money while using Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+
+
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+
+
+  
+    
+    
+      
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../use_cases/" class="md-tabs__link">
+          
+  
+    
+  
+  Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dictionary/from-a-to-z/" class="md-tabs__link">
+          
+  
+  Dictionary
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taikun Resources" class="md-nav__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    Taikun Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - How to go from Zero to Production with Kubernetes in under 30 mins
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - A comprehensive guide to operating Kubernetes on Taikun
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Taikun and its orchestration magic
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    1 - The Taikun way to save time and money while using Kubernetes
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    1 - The Taikun way to save time and money while using Kubernetes
+  </span>
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#taikun-your-kubernetes-engineer" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taikun - Your Kubernetes Engineer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-taikun-saves-you-time-and-money" class="md-nav__link">
+    <span class="md-ellipsis">
+      How Taikun saves you Time and Money
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optimized-compute-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Optimized compute usage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#taikun-use-cases" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taikun use-cases
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Taikun use-cases">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#startup" class="md-nav__link">
+    <span class="md-ellipsis">
+      *Startup
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software-house" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software House
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enterprise-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise DevOps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enterprise-liftshift" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise Lift&amp;Shift
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#regional-cloud-provider" class="md-nav__link">
+    <span class="md-ellipsis">
+      Regional Cloud Provider
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../../use_cases/" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Use Cases
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Use Cases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Use Cases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Taikun-A Swiss knife in Enterprise DevOps
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - How Taikun can help a software house streamline its cloud operations
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - How Taikun can help Startups scale fast and cheap
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Dictionary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dictionary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dictionary/from-a-to-z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From A to Z
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/01/01.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<h1 id="the-taikun-way-to-save-time-and-money-while-using-kubernetes"><strong>The “Taikun” way to save time and money while using Kubernetes</strong><a class="headerlink" href="#the-taikun-way-to-save-time-and-money-while-using-kubernetes" title="Permanent link">&para;</a></h1>
+<p>Kubernetes is now a de facto standard for container orchestration in any IT infrastructure today. </p>
+<p>Every major cloud services provider now have their own Kubernetes-optimised instances to play with. For eg. AWS provides 3 types of Kubernetes services:</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/01/02.png" />
+  </p>
+<figcaption>Source: Kubernetes on AWS</figcaption>
+</figure>
+<p>In the same way, other leading cloud providers like Google Cloud, Azure and Openstack provide their own version of Kubernetes-focused services. </p>
+<p>It is natural for any organisation with a robust Cloud infrastructure to have setups with multiple cloud providers and avoid vendor lock-ins. This increases the complexity of handling the Kubernetes cluster setups. It is a genuine pain point in many organisations. There is a need for a common management dashboard to engineer the vast Kubernetes cluster orchestration systems. </p>
+<h2 id="taikun-your-kubernetes-engineer"><strong>Taikun - Your Kubernetes Engineer</strong><a class="headerlink" href="#taikun-your-kubernetes-engineer" title="Permanent link">&para;</a></h2>
+<p>Taikun is a cloud management tool that helps you create and manage various Kubernetes clusters on all major cloud platforms. It uses CLI API calls of these major providers. Taikun currently supports AWS, Azure and Openstack. </p>
+<p>AWS and Azure are the top 2 cloud providers in the world, commanding <a href="https://www.statista.com/chart/18819/worldwide-market-share-of-leading-cloud-infrastructure-service-providers/"><strong>over 50% of the market share in the cloud infrastructure market</strong></a>. Openstack is the leading tool used in private cloud setups and is expected to grow at a <a href="https://www.mordorintelligence.com/industry-reports/openstack-services-market"><strong>CAGR of over 25% every year in the 2021-26 period</strong></a>. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/01/03.png" />
+  </p>
+<figcaption>Source: Statista</figcaption>
+</figure>
+<p>With comprehensive support for AWS, Azure and Openstack, Taikun is capable of simplifying most of your cloud needs when it comes to container orchestration via Kubernetes. That’s why we call Taikun, your Kubernetes Engineer. </p>
+<h2 id="how-taikun-saves-you-time-and-money"><strong>How Taikun saves you Time and Money</strong><a class="headerlink" href="#how-taikun-saves-you-time-and-money" title="Permanent link">&para;</a></h2>
+<p>Currently, the most common way to handle the increasing complexity in a company’s cloud infrastructure is to hire a strong Cloud team. Not only is it cost heavy, but it also takes a lot of time and coordination between team members to manage the Kubernetes system well. </p>
+<p>In spite of heavy time and money expenditure, there is always a chance of inefficiencies creeping into the usage of these cloud resources. These inefficiencies cost a lot of money as cloud resources work on a pay-as-you-go model.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/01/04.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Taikun creates a level of abstraction over this vast variety of Cloud APIs from multiple cloud providers and provides a single dashboard for the management of Kubernetes clusters. It provides capabilities like creation, deployment, management, billing, monitoring, and backup. So it goes beyond dashboards like Graphana which are solely for monitoring and logging. </p>
+<p>Kubernetes environments in Taikun are fully adjustable with various types of access profiles, Kube configs and Kubernetes versions. User profiles can be set for different members of your team as per our requirements. This saves a huge amount in time and resource costs. Managing Taikun is much simpler and cheaper than having a bunch of trained engineers managing a multi-cloud Kubernetes cluster system.</p>
+<h2 id="optimized-compute-usage"><strong>Optimized compute usage</strong><a class="headerlink" href="#optimized-compute-usage" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/01/05.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p><a href="https://chrisshort.net/the-aws-bill-heard-around-the-world/"><strong>AWS billing shock stories</strong></a> aren’t unheard of to anyone working in the cloud domain. A cloud is nothing but taking compute resources on rent and thus it is important to keep an eye on resource usage on the cloud providers. </p>
+<p>Taikun helps in keeping infrastructure costs under control with its billing tools. One can allocate expenses based on individual project consumption. Billing rules can help eliminate overspending on infrastructure. </p>
+<p>Taikun’s own pricing is also 100% transparent. As an additional step, there is a dedicated Customer Support Manager for every customer to help with any potential issues. </p>
+<h2 id="taikun-use-cases"><strong>Taikun use-cases</strong><a class="headerlink" href="#taikun-use-cases" title="Permanent link">&para;</a></h2>
+<p>Let’s take some use-cases to show how Taikun can be a gamechanger for a Kubernetes setup.</p>
+<h3 id="startup"><strong>*Startup</strong><a class="headerlink" href="#startup" title="Permanent link">&para;</a></h3>
+<p>A startup needs quick scaling as it grows. Hiring a DevOps team to handle Kubernetes setup is not cost-effective. Taikun can provide an easy-to-use interface with a keen eye on billing while giving all the benefits of using a multi-cloud infrastructure. </p>
+<h3 id="software-house"><strong>Software House</strong><a class="headerlink" href="#software-house" title="Permanent link">&para;</a></h3>
+<p>A SaaS company will have to manage many customer environments. Integrating Taikun into their CI/CD pipelines can save a lot of time on managing cloud resources through a single pane of glass and providing customers with a nice easy-to-use dashboard.</p>
+<h3 id="enterprise-devops"><strong>Enterprise DevOps</strong><a class="headerlink" href="#enterprise-devops" title="Permanent link">&para;</a></h3>
+<p>Enterprise DevOps is complex. It has many moving pieces which make it imperative to have a powerful management dashboard. Taikun can help an IT manager manage their team resources, enforce company policies and enable self-service for internal teams. This can vastly improve work-time effectiveness saving both time and money.   </p>
+<h3 id="enterprise-liftshift"><strong>Enterprise Lift&amp;Shift</strong><a class="headerlink" href="#enterprise-liftshift" title="Permanent link">&para;</a></h3>
+<p>Taikun will help save months of work while moving legacy infra to the cloud. The comprehensive tool can easily deploy Kubernetes and create virtual infrastructure in clouds of our choice. The quick overview dashboard and extensive management features can help teams view current statuses easily and thus help plan the transition better.    </p>
+<h3 id="regional-cloud-provider"><strong>Regional Cloud Provider</strong><a class="headerlink" href="#regional-cloud-provider" title="Permanent link">&para;</a></h3>
+<p>For companies that provide cloud services in their region, Taikun can help compete with hyperscalers like AWS and Azure. Taikun can connect the cloud resources and help offer advanced Kubernetes and virtual resources setups to their customers. </p>
+<p>Taikun features can become a USP for the Regional Cloud Providers by giving their customers features like complete CLI, Terraform Provider or credit card payments etc.</p>
+<p>Taikun is thus useful in a myriad set of use-cases for all types of companies, right from a small startup to a large Fortune 100 company. </p>
+<hr />
+<p>Please <a href="mailto:info@itera.io"><strong>contact us</strong></a> to explore our solution in more detail and for a free consultation.</p>
+<p>If you wish to read more about Taikun and how it works, please refer to our <a href="https://taikun.cloud"><strong>Taikun Landing Page</strong></a>. </p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-top--hidden md-icon" data-md-component="top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../02/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 2 - Taikun and its orchestration magic" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              2 - Taikun and its orchestration magic
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../use_cases/" class="md-footer__link md-footer__link--next" aria-label="Next: Taikun Use Cases" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Taikun Use Cases
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "toc.follow", "navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ec8bae80.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88faac82.min.js"></script>
+      
+    
+  </body>
+</html>

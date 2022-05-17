@@ -1,0 +1,1033 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        
+      
+      <link rel="icon" href="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/general/Itera_logo.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11+insiders-4.13.1">
+    
+    
+      
+        <title>3 - Taikun-A Swiss knife in Enterprise DevOps - Taikun Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8b1d949c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="pink" data-md-color-accent="">
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#taikun-a-swiss-knife-in-enterprise-devops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Taikun Resources" class="md-header__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taikun Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 - Taikun-A Swiss knife in Enterprise DevOps
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+
+
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blog/" class="md-tabs__link">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+      
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          
+  
+    
+  
+  Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dictionary/from-a-to-z/" class="md-tabs__link">
+          
+  
+  Dictionary
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taikun Resources" class="md-nav__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    Taikun Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../../blog/" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - How to go from Zero to Production with Kubernetes in under 30 mins
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/04/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - A comprehensive guide to operating Kubernetes on Taikun
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Taikun and its orchestration magic
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blog/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - The Taikun way to save time and money while using Kubernetes
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Use Cases
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Use Cases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Use Cases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    3 - Taikun-A Swiss knife in Enterprise DevOps
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    3 - Taikun-A Swiss knife in Enterprise DevOps
+  </span>
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#many-challenges-one-solution" class="md-nav__link">
+    <span class="md-ellipsis">
+      Many challenges, one solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enterprise-devops-with-taikun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enterprise DevOps with Taikun
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enterprise DevOps with Taikun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#logical-segregation-of-clusters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logical segregation of clusters
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Logical segregation of clusters">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#organization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organization
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      Projects
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      User roles
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no1-segment-and-control-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      No.1 Segment and Control resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no2-enforce-company-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      No.2 Enforce company policies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no3-easy-monitoring-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      No.3 Easy monitoring and troubleshooting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#no4-control-resource-spend" class="md-nav__link">
+    <span class="md-ellipsis">
+      No.4 Control resource spend
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#swiss-knife-for-your-devops" class="md-nav__link">
+    <span class="md-ellipsis">
+      Swiss Knife for your DevOps
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - How Taikun can help a software house streamline its cloud operations
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - How Taikun can help Startups scale fast and cheap
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Dictionary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dictionary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dictionary/from-a-to-z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From A to Z
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/01.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<h1 id="taikun-a-swiss-knife-in-enterprise-devops"><strong>Taikun - A Swiss knife in Enterprise DevOps</strong><a class="headerlink" href="#taikun-a-swiss-knife-in-enterprise-devops" title="Permanent link">&para;</a></h1>
+<p>Enterprise DevOps is taking over everywhere. The delivery processes are getting automated and the role of Cloud in Enterprise DevOps is on the rise. One of the key issues that come with this setup is cloud management. </p>
+<p>Enterprise DevOps will almost always involve multiple public and private cloud providers. There will be multiple teams accessing it in different ways. Without a standard policy and controls, it is easy for the DevOps system to become inefficient and wasteful. But the wastefulness and inefficiency are not only how cloud resources are used but also how the DevOps team’s time and energy are utilized. </p>
+<h2 id="many-challenges-one-solution"><strong>Many challenges, one solution</strong><a class="headerlink" href="#many-challenges-one-solution" title="Permanent link">&para;</a></h2>
+<p>A common example of it can be a Kubernetes cluster deployment. Multiple teams require different levels of Container Orchestration based on their requirements. One way of catering to these demands is that the teams reach out to the DevOps team for each request. Then the DevOps team spins up a cluster for deployment. This is safe but very inefficient and defeats the purpose of DevOps. </p>
+<p>A better solution is for the teams to be able to create, manage and destroy the clusters themselves. But this is easier said than done. For teams to do this well, they need to understand how to use the public cloud providers like AWS, Azure and Google Cloud. There is also an added complexity of understanding Kubernetes well. </p>
+<p>The teams may have different levels of understanding of cloud management. Then there are issues like controlling access, limiting the expense by setting a budget and so on. </p>
+<p><a href="https://taikun.cloud"><strong>TAIKUN</strong></a> helps abstract all these aspects and more and can simplify your Kubernetes usage in the company. Taikun has proven to save up to 90% of the DevOps time and cut infrastructure costs by up to 40%. </p>
+<h2 id="enterprise-devops-with-taikun"><strong>Enterprise DevOps with Taikun</strong><a class="headerlink" href="#enterprise-devops-with-taikun" title="Permanent link">&para;</a></h2>
+<p>Let’s try and understand how Taikun can transform your Enterprise DevOps game. </p>
+<h3 id="logical-segregation-of-clusters">Logical segregation of clusters<a class="headerlink" href="#logical-segregation-of-clusters" title="Permanent link">&para;</a></h3>
+<p>Taikun does neat segregation of the clusters by diving them into Organization and Projects.</p>
+<h4 id="organization">Organization<a class="headerlink" href="#organization" title="Permanent link">&para;</a></h4>
+<p>An <strong>Organization</strong> in Taikun is a logical group of all clusters across all cloud providers being used for a particular purpose. Some may create one organization for a team, a project or a department. Others may choose to have just one Organization for the entire company.</p>
+<h4 id="projects">Projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h4>
+<p>A <strong>Project</strong> in Taikun is a cluster from one cloud provider. Most teams in Enterprise DevOps will have multiple Taikun projects to work with. All Projects fall within an Organization.</p>
+<h4 id="user-roles">User roles<a class="headerlink" href="#user-roles" title="Permanent link">&para;</a></h4>
+<p>Taikun has three user roles - <strong>Partners</strong>, <strong>Managers</strong> and <strong>Users</strong>. </p>
+<p><strong>Partners</strong> are like super admin users in Linux systems. It is a role with the highest privileges and has all the admin control in the Taikun system. Partners can manage multiple Organizations within the Taikun system. They can also create, manage or delete the policies and controls for each Organization and Project. </p>
+<p>A <strong>manager</strong> manages everything within an Organization. So it is a level below a Partner in the Taikun system. All controls related to a project are available for the Manager.</p>
+<p><strong>User</strong> is a role with the lowest privileges in the Taikun system. Most users in a company will be assigned a user role.</p>
+<p>One of the ways a DevOps team can help streamline the privileges in the company is by giving IT managers or Product Managers a Manager role in Taikun. While everyone else can be on-boarded as a User in Taikun.</p>
+<p>The DevOps team themselves can keep a Partner role to have all the necessary controls to the Taikun system.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/02.png" />
+  </p>
+<figcaption>A Partner managing Organizations within the Taikun system</figcaption>
+</figure>
+<p>This sample role distribution not only limits the control each user in the company has on the cloud setup but also, helps create a logical grouping of the cloud clusters for different projects in the company.</p>
+<p>Almost anything you can think of to do with your K8 clusters can be done within the Taikun dashboard itself. Let us now see how company-wide automation of checks, policies and controls can be put in place with Taikun. </p>
+<h2 id="no1-segment-and-control-resources"><strong>No.1 Segment and Control resources</strong><a class="headerlink" href="#no1-segment-and-control-resources" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/03.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p><strong>Projects</strong> in Taikun give ways to control the type and amount of cloud resources that can be assigned to it. One project in Taikun gets associated with a type of cloud setup like AWS or Openstack etc. </p>
+<p>Managers can define the flavour of instances that a project can have and then Users of the project can only create those instances in the project. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/04.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Managers or Partners can go to Flavor Info, choose a flavour and “Bind to Project” to let users create those instances within the project.</p>
+<h2 id="no2-enforce-company-policies"><strong>No.2 Enforce company policies</strong><a class="headerlink" href="#no2-enforce-company-policies" title="Permanent link">&para;</a></h2>
+<p>One of the key challenges in any Cloud Management is to make sure company policies are followed in the cloud. These could be Backup policies, Access policies and many other kinds of internal controls. </p>
+<p>Taikun makes it easy for DevOps teams to set such policies. For example, Managers can set backup policies for projects. This works across cloud providers and is very useful esp. in compliance.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/05.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Similarly, Taikun allows Managers and Partners to easily configure how users can access the clusters. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/06.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Furthermore, you can set policy profiles, create all company policies, and bind them to all projects. This will make all projects in Taikun compliant with internal and external policies.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/07.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<h2 id="no3-easy-monitoring-and-troubleshooting"><strong>No.3 Easy monitoring and troubleshooting</strong><a class="headerlink" href="#no3-easy-monitoring-and-troubleshooting" title="Permanent link">&para;</a></h2>
+<p>Every DevOps team needs easy monitoring and troubleshooting method for their cloud setup. Many enterprises use tools like Graphana and Prometheus to create a single pane of glass for their cloud infrastructure. </p>
+<p>Taikun does this out of the box. Taikun uses Graphana and Prometheus to provide an easy way for teams to monitor their cloud and go through logs to troubleshoot quickly. The tool can also allow you to search through the logs by writing Prometheus queries.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/08.png" />
+  </p>
+<figcaption>Viewing logs in Taikun</figcaption>
+</figure>
+<p>Besides this, Taikun provides DevOps teams ways to get alerted quickly via notification channels of their choice. This can be Slack channels, email or other common communication mediums.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/09.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<h2 id="no4-control-resource-spend"><strong>No.4 Control resource spend</strong><a class="headerlink" href="#no4-control-resource-spend" title="Permanent link">&para;</a></h2>
+<p>Another common issue that DevOps teams face during cloud management is controlling the amount of cloud resources users create and use. Billing and resource management can be critical to Project Managers to protect their budgets from going out of hand. </p>
+<p>Showback and Chargeback features of Taikun are perfect to control these aspects of Cloud management. With these features, managers can control the extent of cloud resources a project uses and limit them from using it further. </p>
+<p>Showback summary in the Taikun dashboard shows how much of the budget is already used for each rule set up by the DevOps team. The advantage of such a rule-wise summary is that it allows DevOps to view the same resource consumption in different ways. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/11.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Chargeback takes this a step further and shows how much of the budget was consumed in what time period by the rules defined by the DevOps team.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/use_cases/03/12.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<h2 id="swiss-knife-for-your-devops"><strong>Swiss Knife for your DevOps</strong><a class="headerlink" href="#swiss-knife-for-your-devops" title="Permanent link">&para;</a></h2>
+<p>As the above utilities suggest, Taikun can become the Swiss knife of your Enterprise DevOps team. Entire cloud automation and management across all major cloud providers can be streamlined and performed via Taikun. </p>
+<hr />
+<p>To know more about <a href="https://taikun.cloud"><strong>TAIKUN</strong></a>, you can read our docs <a href="https://docs.taikun.cloud"><strong>here</strong></a>. You can also try Taikun for free using our online <a href="https://taikun.cloud/subscriptions"><strong>Taikun Cloud offering</strong></a>.</p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-top--hidden md-icon" data-md-component="top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Taikun Use Cases" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Taikun Use Cases
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../02/" class="md-footer__link md-footer__link--next" aria-label="Next: 2 - How Taikun can help a software house streamline its cloud operations" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              2 - How Taikun can help a software house streamline its cloud operations
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "toc.follow", "navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ec8bae80.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88faac82.min.js"></script>
+      
+    
+  </body>
+</html>

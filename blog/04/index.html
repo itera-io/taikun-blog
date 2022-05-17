@@ -1,0 +1,1022 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        
+      
+      <link rel="icon" href="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/general/Itera_logo.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.11+insiders-4.13.1">
+    
+    
+      
+        <title>4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes - Taikun Resources</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8b1d949c.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.9647289d.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#e92063">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="pink" data-md-color-accent="">
+  
+    
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#taikuns-way-to-monitor-and-report-metrics-of-apps-and-users-in-kubernetes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Taikun Resources" class="md-header__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Taikun Resources
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+
+
+  
+    
+    
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+
+
+  
+    
+    
+      
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../" class="md-tabs__link md-tabs__link--active">
+          
+  
+    
+  
+  Blog
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../use_cases/" class="md-tabs__link">
+          
+  
+    
+  
+  Use Cases
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+
+
+  
+    
+    
+  
+  
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../dictionary/from-a-to-z/" class="md-tabs__link">
+          
+  
+  Dictionary
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Taikun Resources" class="md-nav__button md-logo" aria-label="Taikun Resources" data-md-component="logo">
+      
+  <img src="https://cloud.tcpro.cz:30100/swift/v1/KEY_121daf025c5742a6844217e262243c65/doc/taikun_icon_white.png" alt="logo">
+
+    </a>
+    Taikun Resources
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Blog
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_2">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Blog" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Blog
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5 - How to go from Zero to Production with Kubernetes in under 30 mins
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    4 - Taikun’s way to monitor and report metrics of apps and users in Kubernetes
+  </span>
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#taikun-showback-chargeback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Taikun Showback &amp; Chargeback
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-showback-in-taikun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Using Showback in Taikun
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using Showback in Taikun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-showback-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting Showback rules
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#adding-showback-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Adding Showback credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#showback-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      Showback Summary
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chargeback-in-taikun" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chargeback in Taikun
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chargeback in Taikun">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#billing-rules-and-credentials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Billing rules and credentials
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chargeback" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chargeback
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#usage-reports" class="md-nav__link">
+    <span class="md-ellipsis">
+      Usage reports
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - A comprehensive guide to operating Kubernetes on Taikun
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - Taikun and its orchestration magic
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - The Taikun way to save time and money while using Kubernetes
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+          
+            
+          
+        
+          
+        
+          
+        
+          
+        
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__container">
+          <a href="../../use_cases/" class="md-nav__link ">
+            
+  
+  <span class="md-ellipsis">
+    Use Cases
+  </span>
+
+          </a>
+          
+            <label class="md-nav__link " for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Use Cases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Use Cases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/03/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 - Taikun-A Swiss knife in Enterprise DevOps
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2 - How Taikun can help a software house streamline its cloud operations
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../use_cases/01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1 - How Taikun can help Startups scale fast and cheap
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          
+  
+  <span class="md-ellipsis">
+    Dictionary
+  </span>
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Dictionary" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Dictionary
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dictionary/from-a-to-z/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    From A to Z
+  </span>
+
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<figure>
+<p><img alt="" loading="lazy" src="https://cdn.pixabay.com/photo/2013/07/18/10/59/pulse-trace-163708_960_720.jpg" />
+  </p>
+<figcaption>Source Pixabay.com</figcaption>
+</figure>
+<h1 id="taikuns-way-to-monitor-and-report-metrics-of-apps-and-users-in-kubernetes"><strong>Taikun’s way to monitor and report metrics of apps and users in Kubernetes</strong><a class="headerlink" href="#taikuns-way-to-monitor-and-report-metrics-of-apps-and-users-in-kubernetes" title="Permanent link">&para;</a></h1>
+<p>Kubernetes makes it extremely easy to dynamically provision infrastructure resources. It provides a set of APIs that can be triggered by teams to build new clusters or replicate old ones. </p>
+<p>Any large cloud infrastructure would be hosting K8s for multiple tenants (or teams) in the organisation. With APIs to dynamically provision such resources, it can quickly blow up resource consumption and exponentially increase costs. </p>
+<p>The advantage of an auto-scaling architecture in Kubernetes and the ability to programmatically provision expensive resources like GPU on the cloud can increase the risk of overspending and under-optimizing compute resources.</p>
+<p>Often, development teams facing deadline pressures, use and forget to destroy unused resources. Memory leak bugs or inefficient code can also easily cause extraordinary consumption of infrastructure resources. </p>
+<p>It is thus imperative that a cost monitoring solution is put in place. So that each team on the infrastructure knows how much it is consuming from the cloud infrastructure. </p>
+<p>Like all other aspects of Kubernetes infrastructure management - Taikun can help you with it. Let us see how.</p>
+<h2 id="taikun-showback-chargeback"><strong>Taikun Showback &amp; Chargeback</strong><a class="headerlink" href="#taikun-showback-chargeback" title="Permanent link">&para;</a></h2>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/02.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>In Taikun, there are two ways in which efficient monitoring and reporting are done for the usage of apps and users - Showback and Chargeback. Let’s first understand how these two are different. </p>
+<p>We know from our previous blogs that Taikun captures diverse metrics to monitor and report the usage of apps and users. Prometheus metrics can be accessed via queries from the Metrics tab in the Kubernetes server list.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/03.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Showback captures the resource usage by different users and apps within Taikun. Chargeback focuses on the Billing in an Organization. In both of them, rules can be defined to control the usage of compute resources and billing. </p>
+<p>Let’s see how organisations can use Showback and Chargeback features in Taikun to manage resource usage and, consequently, improve their budget utilization.</p>
+<h2 id="using-showback-in-taikun"><strong>Using Showback in Taikun</strong><a class="headerlink" href="#using-showback-in-taikun" title="Permanent link">&para;</a></h2>
+<p>Showback in Taikun can be used to manage the maximum amount of resources that a project can use. The resource can be any <a href="https://docs.taikun.cloud/partner/billing-rules/?h=prometheus#new-rule"><strong>Prometheus metric</strong></a> that is captured in the Taikun system.</p>
+<h3 id="setting-showback-rules">Setting Showback rules<a class="headerlink" href="#setting-showback-rules" title="Permanent link">&para;</a></h3>
+<p>These are defined in the Showback Rules tab under the Manager section. We start by adding a Showback rule to capture and manage that metric. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/04.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>We start with choosing the Organization in which we want to set the Showback rule. Some important fields in a Showback rule are as follows: </p>
+<ul>
+<li>Name needs to be unique. </li>
+<li>Metric Name is basically the metric we want to track and manage. </li>
+<li>Kind is the field where we define where the data is coming from. Taikun gives us the ability to connect external data sources for more metrics. These are defined in another tab called Showback Credentials.</li>
+<li>Type is the field where we tell Taikun how to count the metric. Is it a SUM like how many GBs were used or is it a COUNT like how many flavors of VMs are deployed. </li>
+<li>Price field helps mention EURO/USD/CZK per unit of the metric. </li>
+</ul>
+<p>Other fields define the Global and Project level limit for the metric and link a Showback credential to it if it is relevant. There is also an option to define our own variables in the form of labels.</p>
+<p>You can read more about Showback rules <a href="https://docs.taikun.cloud/partner/billing-rules/?h=prometheus#new-rule"><strong>here</strong></a>.</p>
+<h3 id="adding-showback-credentials"><strong>Adding Showback credentials</strong><a class="headerlink" href="#adding-showback-credentials" title="Permanent link">&para;</a></h3>
+<p>As mentioned earlier, if the metrics need to be collected from an external source - Showback Credential tab under Credentials section is where we define it.</p>
+<p>It is pretty straightforward. We mark the Organization it is for, give it a Name and the credentials (URL, Username and password). That’s it.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/05.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Read more about Showback credentials <a href="https://docs.taikun.cloud/manager/showback-credentials/?h=show+cre"><strong>here</strong></a>.</p>
+<h3 id="showback-summary">Showback Summary<a class="headerlink" href="#showback-summary" title="Permanent link">&para;</a></h3>
+<p>Showback Summary tab under Manager is where all the magic happens. This page shows exactly which Rule is consuming how much of the budget. The page is updated at the beginning of every hour.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/06.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>The collected data can be exported as a CSV file. There is also an option to send the report as an email (defined in My Profile tab of the user)</p>
+<p>More details about Showback summary can be found in <a href="https://docs.taikun.cloud/partner/showback-summary/?h=show+s"><strong>Taikun docs</strong></a>.</p>
+<h2 id="chargeback-in-taikun"><strong>Chargeback in Taikun</strong><a class="headerlink" href="#chargeback-in-taikun" title="Permanent link">&para;</a></h2>
+<p>Chargeback in Taikun is a way to control and manage the compute and infrastructure resources billing in an organisation. This is done by first defining Billing Rules in the Taikun Control Panel. Let’s see how it is done.</p>
+<h3 id="billing-rules-and-credentials">Billing rules and credentials<a class="headerlink" href="#billing-rules-and-credentials" title="Permanent link">&para;</a></h3>
+<p>New budget rule for Organization is added under the Partner &gt; Billing rule. Adding a new rule is straightforward. </p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/07.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Similar to adding a Showback Rule we discussed above, add the field details and choose the Organisation you want to apply the rule to. You have to also choose the Price Rate between 0% and 100%. </p>
+<p>If you want to add new external data sources, you can add them under Billing Credential under the Credentials section. The process is similar to Showback credential.</p>
+<h3 id="chargeback">Chargeback<a class="headerlink" href="#chargeback" title="Permanent link">&para;</a></h3>
+<p>The Chargeback tab under Billing is where all the summary gets saved. The data is shown in a tabular format and can be filtered on time.</p>
+<p>Export to CSV and share via email option is available for this dashboard as well.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/08.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>More about Taikun Chargeback <a href="https://docs.taikun.cloud/manager/chargeback"><strong>here</strong></a>.</p>
+<h3 id="usage-reports">Usage reports<a class="headerlink" href="#usage-reports" title="Permanent link">&para;</a></h3>
+<p>Another kind of report that Taikun provides is a Usage Report. This again can be found under the Billing section in the Taikun Dashboard.</p>
+<p>A Usage Report in Taikun provides more granular data. With it, you can view how much compute and infrastructure resources have been utilized by each project. </p>
+<p>The unit of measurement for it is TCU or Taikun Compute Unit. A Taikun Compute Unit is basically no. of CPUs used in the project + GB of RAM used in the project.</p>
+<figure>
+<p><img alt="" loading="lazy" src="https://cloud.tcpro.cz:30100/swift/v1/KEY_c5d050a1634d4ed1984f3844813f1a1d/blog/04/09.png" />
+  </p>
+<figcaption></figcaption>
+</figure>
+<p>Read the docs to know more about Usage reports in Taikun.</p>
+<h2 id="conclusion"><strong>Conclusion</strong><a class="headerlink" href="#conclusion" title="Permanent link">&para;</a></h2>
+<p>Taikun’s Showback and Chargeback features have proven to be a game-changer for many Cloud management applications. With Showback rules and Billing rules in place, teams have become more confident in using autoscaling architecture without the risk of overshooting the company budgets.</p>
+<p>These features help optimise the infrastructure resources and bring in a sense of accountability within teams using the Kubernetes setup.</p>
+<hr />
+<p>Please <a href="mailto:info@itera.io"><strong>contact us</strong></a> to explore Taikun in more detail and for a free consultation.</p>
+<p>If you wish to try Taikun and see it in action, try our cloud solution <a href="https://taikun.cloud"><strong>here</strong></a>. </p>
+
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-top--hidden md-icon" data-md-component="top">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../05/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 5 - How to go from Zero to Production with Kubernetes in under 30 mins" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              5 - How to go from Zero to Production with Kubernetes in under 30 mins
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../03/" class="md-footer__link md-footer__link--next" aria-label="Next: 3 - A comprehensive guide to operating Kubernetes on Taikun" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              3 - A comprehensive guide to operating Kubernetes on Taikun
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "toc.integrate", "toc.follow", "navigation.expand", "navigation.sections", "search.highlight", "search.share", "search.suggest", "navigation.top", "navigation.tracking", "navigation.indexes", "content.code.annotate"], "search": "../../assets/javascripts/workers/search.ec8bae80.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.88faac82.min.js"></script>
+      
+    
+  </body>
+</html>
